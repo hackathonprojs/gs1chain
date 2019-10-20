@@ -31,6 +31,14 @@ async function writeState(newdata) {
   return stateInfo;
 }
 
+async function readState() {
+  let { state, send } = await connect(GCI)
+
+  let stateInfo = await state;
+  console.log(stateInfo);
+  return stateInfo;
+}
+
 
 
 const express = require('express')
@@ -45,6 +53,15 @@ expressapp.get('/writehash', (req, res) => {
 
   (async function () {
     let stateInfo = await writeState({"hash": req.query.hash});
+	  res.send(stateInfo);
+  })();
+	
+})
+
+expressapp.get('/readstate', (req, res) => {
+
+  (async function () {
+    let stateInfo = await readState();
 	  res.send(stateInfo);
   })();
 	
