@@ -18,7 +18,7 @@
 
 let { connect } = require('lotion')
 
-let GCI = '39eeb1c4516ade9a33a4605ae33e8a21b29592728ccdf80bbd72cb705c71a1a5'
+let GCI = '9f0e92e45875bd0a2d88c92bf485c8e43fedee33dfb029baa8d647270b090f5c'
 
 
 async function writeState(newdata) {
